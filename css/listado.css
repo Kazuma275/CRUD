@@ -1,0 +1,118 @@
+/* 
+    estilo del listado de empleados
+*/
+
+/* Estilo general */
+
+#container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+}
+
+/* Estilo de tablas */
+
+caption {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+text-align: center;
+}
+
+td{
+    width: auto;
+    color: white;
+}
+
+tr:first-child {
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+tr:hover td{backdrop-filter: blur(10px);}
+
+/* Estilo botones */
+
+.btn {
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 2px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.glass-button {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.glass-button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+  /* Extra styles for demo */
+  /* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
+
+body {
+    background: url(../img/background-blue.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.glass-button {
+    margin: 15px;
+    margin-top: 4   0px;
+}
+
+h1, h1 a {
+    min-height: 120px;
+    width: 90%;
+    max-width: 700px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #fff;
+    padding-top: 60px;
+    color: rgba(255,255,255,0.8);
+}
+
+p {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 32px;
+    color: rgba(255,255,255,0.6);
+}

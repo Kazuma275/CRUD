@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/insercion.css">
+    <link rel="shortcut icon" href="./img/favicon.webp" type="image/x-icon">
+    <title>Aplicación Registro Civil - Insercción de datos</title>
+</head>
+<body>
+    <div class="circlebg">
+    <div class="circle circle-magenta-1"></div>
+    <div class="circle circle-orange"></div>
+    <div class="circle circle-blue"></div>
+    <div class="circle circle-magenta-4"></div>
+    </div>
+
+
+    <div class="card" id="card">
+        <div class="heading">
+        <h1>Insercción de datos</h1>
+    </div>
+
+    <div class="textarea">
+    <label for="textarea">Introduce tu identificador (ID)</label>
+    <input type="textarea" id="textarea" placeholder="Escribe aquí..." required>
+    </div>
+
+    <div class="">
+        <label>Tipo de documento </label>
+        <select name="provincia" id="provincia">
+            <option value="0">NIF/NIE</option>
+            <option value="04">Pasaporte/CIF</option>
+        </select> 
+        <br>
+    </div>
+
+    <div class="textarea">
+        <label for="textarea">Email</label>
+        <input type="email" id="textarea" placeholder="Email" required>
+    </div>
+
+
+    <div class="">
+        <label>Elige provincia </label>
+        <select name="provincia" id="provincia">
+            <option value="0"></option>
+            <option value="04">Almería</option>
+            <option value="11">Cádiz</option>
+            <option value="14">Córdoba</option>
+            <option value="18">Granada</option>
+            <option value="21">Huelva</option>
+            <option value="23">Jaén</option>
+            <option value="29">Málaga</option>
+            <option value="41">Sevilla</option>
+        </select> 
+        <br>
+    </div>
+
+    <div class="textarea">
+        <label for="textarea">Teléfono móvil</label>
+        <input type="textarea" id="textarea" placeholder="Teléfono móvil" required>
+    </div>
+
+    <div class="footer">
+        <p>¿Tiene familia numerosa?</p>
+        <input type="radio" id="yes"  name="pilih" value="yes">
+        <label for="yes">Sí</label>
+        <input type="radio" id="no" name="pilih" value="no">
+        <label for="no">No</label>
+    </div>
+
+    <br>
+    
+    <input type="checkbox" name="terminos" id="terminos" required> 
+    <label>Acepto los <a href="">términos y condiciones</a></label> <br>
+
+    <div class="button">
+        <button type="submit">Entrar</button>
+        <button class="cancel-btn">Cancelar</butto>
+    </div>
+</html>
