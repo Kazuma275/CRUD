@@ -15,17 +15,18 @@ Font
     font-family: "texto";
 }
 
-body{
+div#centrado {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    overflow: scroll;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-body form{
+div#centrado form{
     width: 100vw;
     height: auto;
     display: flex;
@@ -35,7 +36,7 @@ body form{
     overflow: hidden;
 }
 
-body::after{
+/* body::after{
     content:'';
     display: block;
     position: absolute;
@@ -44,9 +45,9 @@ body::after{
     background-color: rgba(255, 255, 255, 0.7);
     filter: blur(200px);
     z-index: -2;
-}
+} */
 
-body::after form{
+/* body::after form{
     content:'';
     display: block;
     position: absolute;
@@ -55,7 +56,7 @@ body::after form{
     background-color: rgba(255, 255, 255, 0.7);
     filter: blur(200px);
     z-index: -2;
-}
+} */
 
 h1{
     font-family: 'texto';
@@ -77,22 +78,26 @@ h1{
 }
 
 .circle{
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     filter: blur(65px);
 }
 
 .circlebg{
     display: flex;
+    width: 100%;
     position: absolute;
     z-index: -2;
     opacity: 1;
+    top:12em;
+    justify-content: center;
+    align-items: center;
 }
 
 .circle-magenta-1{
     background: magenta;
-    transform: translateX(40%);
+    /* transform: translateX(40%); */
 }
 
 .circle-blue{
@@ -187,6 +192,10 @@ input[type=radio]{
 .text-red {
     visibility: hidden;
     color: red;
+}
+
+.aceptar {
+    font-size: 0.7em;
 }
 
 .button{

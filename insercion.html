@@ -8,28 +8,34 @@
     <title>Aplicación Civil Register - Data insertion</title>
 </head>
 <body>
+    
     <div class="circlebg">
-    <div class="circle circle-magenta-1"></div>
-    <div class="circle circle-orange"></div>
-    <div class="circle circle-blue"></div>
-    <div class="circle circle-magenta-4"></div>
+
+        <div class="circle circle-magenta-1"></div>
+        <!-- <div class="circle circle-orange"></div>
+        <div class="circle circle-blue"></div>
+        <div class="circle circle-magenta-4"></div> -->
     </div>
 
+    <div id="centrado">
+        
+
     <form onsubmit="return validacion()" method="post">
+        
         <div class="card" id="card">
             <div class="heading">
             <h1>Insercción de datos</h1>
         </div>
 
         <div class="textarea">
-        <label for="name">Introduce tu nombre</label>
+        <label for="name">Introduce tu nombre <span>*</span></label>
         <input onchange="resetear('name')" type="textarea" id="name" name="name" aria-describedby="nameHelp" placeholder="Escribe aquí...">
         </div>
 
         <div id="nameHelp" class="text-red"></div>
 
         <div class="textarea">
-            <label for="surname">Introduce tu apellido</label>
+            <label for="surname">Introduce tu apellido <span>*</span></label>
             <input onchange="resetear('surname')" type="textarea" id="surname" name="surname" aria-describedby="surnameHelp" placeholder="Escribe aquí...">
         </div>
 
@@ -58,7 +64,7 @@
         <!-- Identificador -->
         
         <div class="textarea">
-            <label for="id">Introduce tu identificador (ID)</label>
+            <label for="id">Introduce tu identificador (ID) <span>*</span></label>
             <input onchange="resetear('id')" type="textarea" id="id" name="id" aria-describedby="idHelp" placeholder="123X...">
         </div>
 
@@ -67,7 +73,7 @@
         <!-- Número de teléfono -->
 
         <div class="textarea">
-            <label for="numero">Teléfono móvil</label>
+            <label for="numero">Teléfono móvil <span>*</span></label>
             <input onchange="resetear('numero')" type="textarea" id="numero" name="numero" aria-describedby="numeroHelp" placeholder="Escribe aquí...">
         </div>
 
@@ -86,7 +92,7 @@
         <!-- Email -->
 
         <div class="textarea">
-            <label for="textarea2">Email</label>
+            <label for="textarea2">Email <span>*</span></label>
             <input onchange="resetear('email')" type="textarea" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
         </div>
 
@@ -95,21 +101,21 @@
         <!-- Familia numerosa -->
 
         <div class="">
-            <label>¿Tiene familia numerosa? <span>*</span></label>
+            <label>¿Tiene familia numerosa? </label>
             <input onchange="resetear('familia')" id="yes" type="radio" name="familia" value="yes">
             <label for="yes">Sí</label>
             <input onchange="resetear('familia')" id="no" type="radio" name="familia" value="0">
             <label for="no">No</label>
         </div>
 
-        <div id="familiaHelp" class="text-red">MAL</div>
+        <div id="familiaHelp" class="text-red aceptar">Solo aceptamos familias numerosas</div>
 
         <!-- Términos -->
         
         <input onchange="resetear('terminos')" type="checkbox" name="terminos" id="terminos" aria-describedby="terminosHelp" value="1"> 
         <label>Acepto los <a id="myBtn" class="link">términos y condiciones</a></label> <br>
 
-        <div id="terminosHelp" class="text-red">MAL</div>
+        <div id="terminosHelp" class="text-red aceptar">Debes aceptar los términos y condiciones</div>
 
         <!-- w3school -->
         <!-- The Modal -->
@@ -159,6 +165,8 @@
             <button class="cancel-btn">Cancelar</butto>
         </div>
     </form>
+</div>
+</body>
 
     <script src="./js/insercion.js"></script>
 </html>
