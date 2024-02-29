@@ -31,9 +31,8 @@ if (event.target == modal) {
 funcion validacion para inserccion.html
 
 */
-function validacion(e) {
+function validacion() {
 
-    e.preventDefault();
     let correcto = true;
     let name = document.getElementById('name').value;
     let surname = document.getElementById('surname').value;
@@ -56,7 +55,7 @@ function validacion(e) {
         correcto = false;
     }
 
-    if (!/^(?=.*[A-Z])(?=.*\d{8}).{9}$/.test(id)) {
+    if (!/^(?=.*[A-Z]$)(?=.*\d{3}).{4}$/.test(id)) {
         document.getElementById('idHelp').style.visibility = "visible";
         document.getElementById('id').style.borderBottom = "3px solid red";
         correcto = false;
@@ -74,7 +73,7 @@ function validacion(e) {
         correcto = false; // Detiene el envío del formulario
     }
 
-    if (!familia === "yes") {
+    if (!familia) {
         document.getElementById('familiaHelp').style.visibility = "visible";
         correcto = false; // Detiene el envío del formulario
     }

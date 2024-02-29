@@ -15,7 +15,7 @@
     <div class="circle circle-magenta-4"></div>
     </div>
 
-    <form onsubmit="return validacion(event)">
+    <form onsubmit="return validacion()" method="post">
         <div class="card" id="card">
             <div class="heading">
             <h1>Insercción de datos</h1>
@@ -59,7 +59,7 @@
         
         <div class="textarea">
             <label for="id">Introduce tu identificador (ID)</label>
-            <input onchange="resetear('id')" type="textarea" id="id" name="id" aria-describedby="idHelp" placeholder="12345678X...">
+            <input onchange="resetear('id')" type="textarea" id="id" name="id" aria-describedby="idHelp" placeholder="123X...">
         </div>
 
         <div id="idHelp" class="text-red"></div>
@@ -96,15 +96,13 @@
 
         <div class="">
             <label>¿Tiene familia numerosa? <span>*</span></label>
-            <input onchange="resetear('familia')" id="familia" type="radio" name="familia" value="yes">
+            <input onchange="resetear('familia')" id="yes" type="radio" name="familia" value="yes">
             <label for="yes">Sí</label>
-            <input onchange="resetear('familia')" id="familia" type="radio" name="familia" value="no">
+            <input onchange="resetear('familia')" id="no" type="radio" name="familia" value="0">
             <label for="no">No</label>
         </div>
 
-        <div id="familiaHelp" class="text-red">PENE</div>
-
-        <br>
+        <div id="familiaHelp" class="text-red">MAL</div>
 
         <!-- Términos -->
         
