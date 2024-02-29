@@ -8,8 +8,6 @@ Font
     src: url(../font/Gorva-Regular-Demo.ttf);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
-
 *{
     margin: 0;
     padding: 0;
@@ -24,10 +22,31 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items:center;
+    overflow: scroll;
+}
+
+body form{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
     overflow: hidden;
 }
 
 body::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    filter: blur(200px);
+    z-index: -2;
+}
+
+body::after form{
     content:'';
     display: block;
     position: absolute;
@@ -97,13 +116,17 @@ h1{
 } */
 
 .heading, .textarea, .footer, .button{
-    margin-top: 1em;
+    margin-top: 0.2em;
 }
 
 label, p{
     font-family: 'texto';
     color: black;
     font-size: .8rem;
+}
+
+h1{
+    margin-bottom: 0.5em;
 }
 
 .card{
@@ -161,13 +184,21 @@ input[type=radio]{
     margin-left: 1em;
 }
 
+.text-red {
+    visibility: hidden;
+    color: red;
+}
+
 .button{
     display: flex;
     justify-content: space-between;
     padding: 1rem 0;
 }
 
-
+.link{
+    text-decoration-line: underline;
+    color: blue;
+}
 
 .card .button button{
     width: 50%;
@@ -187,7 +218,79 @@ input[type=radio]{
     margin-left: .8em;
 }
 
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+  /* Modal Content/Box */
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+  /* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myBtn {
+    cursor: pointer;
+}
+
+.modal-content {
+    color: black;
+    background-color: #385BB8;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    margin: 80px auto 0;
+    margin-bottom: 80px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]){
     /* se puede invertir el selector */
     width: 100%;
+}
+
+@media screen and (height < 700px){
+        
+    body{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
 }

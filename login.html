@@ -10,21 +10,28 @@
     <body>
         <div class="wrapper">
 
-        <form action="#">
+        <form onsubmit="return validacion()" method="post">
             <h2>Login</h2>
             <div class="input-field">
-                <input type="text" required>
+                <input onchange="resetear('username')" type="text" id="username" name="username" aria-describedby="usernameHelp">
                 <label>Enter your username</label>
-
             </div>
 
+            <div id="usernameHelp" class="text-red"></div>
+
+<!--             <div class="input-field">
+                <input type="text" required>
+                <label>Enter your username</label>
+            </div> -->
+            
             <div class="input-field">
-                <input type="password" required>
+                <input onchange="resetear('password')" type="password" id="password" name="password" aria-describedby="passwordHelp">
                 <label>Enter your password</label>
             </div>
 
-            <div class="forget">
+            <div id="passwordHelp" class="text-red"></div>
 
+            <div class="forget">
             <label for="remember">
                 <input type="checkbox" id="remember">
                     <p>Remember me</p>
@@ -39,4 +46,6 @@
 
         </div>
     </body>
+
+    <script src="./js/login.js"></script>
 </html>
