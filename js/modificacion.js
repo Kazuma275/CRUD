@@ -27,11 +27,10 @@ if (event.target == modal) {
 }
 
 /* 
-*
-*funcion validacion para inserccion.html
-*
-*/
 
+funcion validacion para modificacion.html
+
+*/
 function validacion() {
 
     let correcto = true;
@@ -44,15 +43,11 @@ function validacion() {
     let terminos = document.getElementById('terminos').checked;
     let numero = document.getElementById('numero').value;
 
-    /* Validación nombre */
-
     if (name == "") {
         document.getElementById('nameHelp').style.visibility = "visible";
         document.getElementById('name').style.borderBottom = "3px solid red";
         correcto = false;
     }
-
-    /* Validación apellido */
 
     if (!/^.{6,}$/.test(surname)) {
         document.getElementById('surnameHelp').style.visibility = "visible";
@@ -60,15 +55,11 @@ function validacion() {
         correcto = false;
     }
 
-    /* Validación id */
-
     if (!/^(?=.*[A-Z]$)(?=.*\d{3}).{4}$/.test(id)) {
         document.getElementById('idHelp').style.visibility = "visible";
         document.getElementById('id').style.borderBottom = "3px solid red";
         correcto = false;
     }
-
-    /* Validación email */
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         document.getElementById('emailHelp').style.visibility = "visible";
@@ -76,30 +67,22 @@ function validacion() {
         correcto = false;
     }
 
-    /* Validación provincia */
-
     if (provincia === "0") {
         document.getElementById('provinciaHelp').style.visibility = "visible";
         document.getElementById('provincia').style.borderBottom = "3px solid red";
         correcto = false; // Detiene el envío del formulario
     }
 
-    /* Validación familia */
-
     if (!familia) {
         document.getElementById('familiaHelp').style.visibility = "visible";
         correcto = false; // Detiene el envío del formulario
     }
-
-    /* Validación numero teléfono */
 
     if (!/^\d{9}$/.test(numero)) {
         document.getElementById('numeroHelp').style.visibility = "visible";
         document.getElementById('numero').style.borderBottom = "3px solid red";
         correcto = false; // Detiene el envío del formulario
     }
-
-    /* Validación términos y condiciones */
 
     if (!terminos) {
         document.getElementById('terminosHelp').style.visibility = "visible";

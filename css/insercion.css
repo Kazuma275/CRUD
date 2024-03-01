@@ -271,7 +271,7 @@ input[type=radio]{
 
 .modal-content {
     color: black;
-    background-color: #385BB8;
+    background-color: rgba(182, 21, 182, 0.719);
     font-size: 18px;
     font-weight: 500;
     text-transform: capitalize;

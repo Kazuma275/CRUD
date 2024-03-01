@@ -12,41 +12,45 @@
     <div class="circlebg">
 
         <div class="circle circle-magenta-1"></div>
-        <!-- <div class="circle circle-orange"></div>
-        <div class="circle circle-blue"></div>
-        <div class="circle circle-magenta-4"></div> -->
+
     </div>
 
     <div id="centrado">
-        
+    
 
     <form onsubmit="return validacion()" method="post">
         
         <div class="card" id="card">
             <div class="heading">
-            <h1>Insercción de datos</h1>
+            <h1>Data insertion</h1>
         </div>
 
+        <!-- Nombre -->
+
         <div class="textarea">
-        <label for="name">Introduce tu nombre <span>*</span></label>
-        <input onchange="resetear('name')" type="textarea" id="name" name="name" aria-describedby="nameHelp" placeholder="Escribe aquí...">
+        <label for="name">Enter your name <span>*</span></label>
+        <input onchange="resetear('name')" type="textarea" id="name" name="name" aria-describedby="nameHelp" placeholder="Type here...">
         </div>
 
         <div id="nameHelp" class="text-red"></div>
 
+        <!-- Apellido -->
+
         <div class="textarea">
-            <label for="surname">Introduce tu apellido <span>*</span></label>
-            <input onchange="resetear('surname')" type="textarea" id="surname" name="surname" aria-describedby="surnameHelp" placeholder="Escribe aquí...">
+            <label for="surname">Enter your surname <span>*</span></label>
+            <input onchange="resetear('surname')" type="textarea" id="surname" name="surname" aria-describedby="surnameHelp" placeholder="Type here...">
         </div>
 
         <div id="surnameHelp" class="text-red"></div>
 
         <!-- Provincias -->
 
+        <!-- El valor que se almacena es el código postal -->
+
         <div class="">
-            <label>Elige provincia <span>*</span> </label>
+            <label>Choose a province <span>*</span> </label>
             <select onchange="resetear('provincia')" id="provincia" name="provincia">
-                <option value="0">-- elige uno</option>
+                <option value="0">-- choose one</option>
                 <option value="04">Almería</option>
                 <option value="11">Cádiz</option>
                 <option value="14">Córdoba</option>
@@ -64,7 +68,7 @@
         <!-- Identificador -->
         
         <div class="textarea">
-            <label for="id">Introduce tu identificador (ID) <span>*</span></label>
+            <label for="id">Enter your identifier (ID) <span>*</span></label>
             <input onchange="resetear('id')" type="textarea" id="id" name="id" aria-describedby="idHelp" placeholder="123X...">
         </div>
 
@@ -73,7 +77,7 @@
         <!-- Número de teléfono -->
 
         <div class="textarea">
-            <label for="numero">Teléfono móvil <span>*</span></label>
+            <label for="numero">Mobile phone <span>*</span></label>
             <input onchange="resetear('numero')" type="textarea" id="numero" name="numero" aria-describedby="numeroHelp" placeholder="Escribe aquí...">
         </div>
 
@@ -82,10 +86,10 @@
         <!-- Tipo de documento -->
 
         <div class="">
-            <label>Tipo de documento </label>
+            <label>Document type </label>
             <select name="provincia" id="documento">
                 <option value="0">NIF/NIE</option>
-                <option value="04">Pasaporte/CIF</option>
+                <option value="04">Passport/CIF</option>
             </select> 
         </div>
 
@@ -101,64 +105,79 @@
         <!-- Familia numerosa -->
 
         <div class="">
-            <label>¿Tiene familia numerosa? </label>
+            <label>¿Do you have a large family? <span style="margin-right: 10%;">*</span> </label>
             <input onchange="resetear('familia')" id="yes" type="radio" name="familia" value="yes">
-            <label for="yes">Sí</label>
+            <label for="yes">Yes</label>
             <input onchange="resetear('familia')" id="no" type="radio" name="familia" value="0">
             <label for="no">No</label>
         </div>
 
-        <div id="familiaHelp" class="text-red aceptar">Solo aceptamos familias numerosas</div>
+        <div id="familiaHelp" class="text-red aceptar">We only accept large families</div>
 
         <!-- Términos -->
         
         <input onchange="resetear('terminos')" type="checkbox" name="terminos" id="terminos" aria-describedby="terminosHelp" value="1"> 
-        <label>Acepto los <a id="myBtn" class="link">términos y condiciones</a></label> <br>
+        <label>I Accept the <a id="myBtn" class="link">terms and conditions</a></label> <br>
 
-        <div id="terminosHelp" class="text-red aceptar">Debes aceptar los términos y condiciones</div>
+        <div id="terminosHelp" class="text-red aceptar">You must accept the terms and conditions</div>
 
         <!-- w3school -->
         <!-- The Modal -->
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
-            <div class="modal-content text-justify">
+            <div class="modal-content">
                 <span class="close">&times;</span>
 
-                <h3> Términos y Condiciones del Registro en la Página Web</h3>
+                <h3> Website Registration Terms and Conditions</h3>
 
-                <br>
+                <h4 style="margin-top: 2%; margin-bottom: 2%;">By registering on this website, you agree to the following:</h4>
 
-                <p> Al utilizar y registrarte en esta página web, aceptas los siguientes términos y condiciones: </p>
-                
-                <p> <h5>Registro y Responsabilidad:</h5></p>
-                
-                <p> Al proporcionar información personal, como tu correo electrónico, número de teléfono y detalles sobre la familia numerosa, te comprometes a ofrecer datos precisos y actuales. Eres responsable de mantener la confidencialidad de tu cuenta y contraseña.
-                <h5>Uso Apropiado: </h5></p>
-                
-                <p> Este registro está destinado únicamente para uso personal y no comercial. No se permite el registro en nombre de terceros sin su consentimiento expreso.
-                Privacidad:</p>
-                
-                <p> La información proporcionada durante el registro se recopilará y procesará de acuerdo con nuestra política de privacidad. Asegúrate de revisar y comprender nuestras prácticas de privacidad.
-                <h5>Comunicaciones Electrónicas:</h5></p>
-                
-                <p>Al registrarte, aceptas recibir comunicaciones electrónicas, como correos electrónicos, relacionadas con tu cuenta y los servicios ofrecidos en esta página web.
-                <h5>Seguridad de la Información:</h5></p>
-                
-                <p>Implementamos medidas de seguridad para proteger la información del registro, pero no podemos garantizar la seguridad absoluta. Es tu responsabilidad tomar precauciones para proteger tu información personal.
-                <h5>Uso de Datos Familiares:</h5></p>
-                
-                <p>Si proporcionas información sobre familia numerosa, aceptas que podamos utilizar esta información de acuerdo con nuestras políticas y en cumplimiento de las leyes de privacidad aplicables.
-                <h5>Modificaciones y Actualizaciones:</h5></p>
-                
-                <p>Nos reservamos el derecho de modificar o actualizar estos términos y condiciones en cualquier momento. Se te notificará sobre cambios significativos y se te dará la oportunidad de revisar y aceptar los nuevos términos.
-                <h5>Finalización de la Cuenta:</h5></p>
-                
-                <p>Nos reservamos el derecho de suspender o cancelar tu cuenta si se determina que has violado estos términos y condiciones.
-                Al registrarte, reconoces y aceptas estos términos y condiciones. Si no estás de acuerdo, te instamos a que no completes el proceso de registro en esta página web.</p>
+                <p style="margin-bottom: 2%;"> Provide accurate and current personal information, including email, phone number, and details about a large family. </p>
+
+                <h5>Accurate Information:</h5>
+
+                <div class="text-justify">
+
+                    <p>Provide accurate and current personal information, including email, phone number, and details about a large family.</p>
+                    
+                    <h5>Personal Use Only:</h5>
+                    
+                    <p> Register for personal use only; do not register on behalf of others without their consent.</p>
+
+                    <h5>Privacy Compliance: </h5>
+                    
+                    <p>Your information will be collected and processed in accordance with our privacy policy.</p>
+                    
+                    <h5>Communication Consent:</h5>
+                    
+                    <p>Agree to receive electronic communications related to your account and services. </p>
+
+                    <h5>Security Awareness:</h5></p>
+                    
+                    <p>Take precautions to secure your personal information; we implement security measures but cannot guarantee absolute security.</p>
+
+                    <h5>Family Information Usage:</h5>
+                    
+                    <p>Accept the use of large family information according to our policies and privacy laws. </p>
+
+                    <h5>Updates Notification:</h5>
+                    
+                    <p>Be notified of significant changes to these terms and have the opportunity to review and accept new terms. </p>
+
+                    <h5>Account Termination:</h5>
+                    
+                    <p>We may suspend or cancel your account for violations. </p>
+
+                    <p style="margin-top: 2%;">By registering, you acknowledge and accept these terms. If you disagree, please refrain from completing the registration process.</p>
+
+                </div>
+
             </div>
 
-            </div>
+        </div>
+
+        <!-- Botones -->
 
         <div class="button">
             <button type="submit">Entrar</button>

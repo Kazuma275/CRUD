@@ -12,18 +12,16 @@
 
         <form onsubmit="return validacion()" method="post">
             <h2>Login</h2>
+
+            <!-- Nombre -->
             <div class="input-field">
                 <input onchange="resetear('username')" type="text" id="username" name="username" aria-describedby="usernameHelp">
                 <label>Enter your username</label>
             </div>
 
             <div id="usernameHelp" class="text-red"></div>
-
-<!--             <div class="input-field">
-                <input type="text" required>
-                <label>Enter your username</label>
-            </div> -->
             
+            <!-- Contraseña -->
             <div class="input-field">
                 <input onchange="resetear('password')" type="password" id="password" name="password" aria-describedby="passwordHelp">
                 <label>Enter your password</label>

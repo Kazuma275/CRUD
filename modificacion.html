@@ -3,72 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/insercion.css">
+    <link rel="stylesheet" href="./css/modificacion.css">
     <link rel="shortcut icon" href="./img/favicon.webp" type="image/x-icon">
-    <title>Aplicación Registro Civil - Insercción de datos (M)</title>
+    <title>Aplicación Civil Register - Data insertion</title>
 </head>
 <body>
+    
     <div class="circlebg">
-    <div class="circle circle-magenta-1"></div>
-    <div class="circle circle-orange"></div>
-    <div class="circle circle-blue"></div>
-    <div class="circle circle-magenta-4"></div>
+
+        <div class="circle circle-magenta-1"></div>
+
     </div>
 
+    <div id="centrado">
+        
 
-    <div class="card" id="card">
-        <div class="heading">
-        <h1>Insercción de datos</h1>
-    </div>
+    <form onsubmit="return validacion()" method="post">
+        
+        <div class="card" id="card">
+            <div class="heading">
+            <h1>Data insertion</h1>
+        </div>
 
-    <div class="textarea">
-    <label for="textarea">Introduce tu identificador (ID)</label>
-    <input type="textarea" id="textarea" value="841" required>
-    </div>
+        <!-- Nombre -->
 
-    <div class="">
-        <label>Tipo de documento </label>
-        <select name="provincia" id="provincia">
-            <option value="0">NIF/NIE</option>
-        </select> 
-        <br>
-    </div>
+        <div class="textarea">
+        <label for="name">Enter your name <span>*</span></label>
+        <input onchange="resetear('name')" type="textarea" id="name" name="name" aria-describedby="nameHelp" placeholder="Type here..." value="Sara">
+        </div>
 
-    <div class="textarea">
-        <label for="textarea">Email</label>
-        <input type="email" id="textarea" value="saramullenalarcon@gmail.com" required>
-    </div>
+        <div id="nameHelp" class="text-red"></div>
 
+        <!-- Apellido -->
 
-    <div class="">
-        <label>Elige provincia </label>
-        <select name="provincia" id="provincia">
-            <option value="29">Málaga</option>
-        </select> 
-        <br>
-    </div>
+        <div class="textarea">
+            <label for="surname">Enter your surname <span>*</span></label>
+            <input onchange="resetear('surname')" type="textarea" id="surname" name="surname" aria-describedby="surnameHelp" placeholder="Type here..." value="Mullen Alarcón">
+        </div>
 
-    <div class="textarea">
-        <label for="textarea">Teléfono móvil</label>
-        <input type="textarea" id="textarea" value="684109293" required>
-    </div>
+        <div id="surnameHelp" class="text-red"></div>
 
-    <div class="footer">
-        <p>¿Tiene familia numerosa?</p>
-        <input type="radio" id="yes"  name="pilih" value="yes">
-        <label for="yes">Sí</label>
-        <input type="radio" id="no" name="pilih"    >
-        <label for="no">No</label>
-    </div>
+        <!-- Provincias -->
 
-    <br>
-    
-    <input type="checkbox" name="terminos" id="terminos" required> 
-    <label>Acepto los <a href="">términos y condiciones</a></label> <br>
+        <div class="">
+            <label>Choose a province <span>*</span> </label>
+            <select onchange="resetear('provincia')" id="provincia" name="provincia">
+                <option value="41">Sevilla</option>
+            </select> 
+            <br>
+        </div>
 
-    <div class="button">
-        <button type="submit">Entrar</button>
-        <button class="cancel-btn">Cancelar</button>
-    </div>
-    
+        <div id="provinciaHelp" class="text-red"></div>
+
+        <!-- Identificador -->
+        
+        <div class="textarea">
+            <label for="id">Enter your identifier (ID) <span>*</span></label>
+            <input onchange="resetear('id')" type="textarea" id="id" name="id" aria-describedby="idHelp" placeholder="123X..." value="841Z">
+        </div>
+
+        <div id="idHelp" class="text-red"></div>
+
+        <!-- Número de teléfono -->
+
+        <div class="textarea">
+            <label for="numero">Mobile phone <span>*</span></label>
+            <input onchange="resetear('numero')" type="textarea" id="numero" name="numero" aria-describedby="numeroHelp" placeholder="Escribe aquí..." value="684109293">
+        </div>
+
+        <div id="numeroHelp" class="text-red"></div>
+
+        <!-- Tipo de documento -->
+
+        <div class="">
+            <label>Document type </label>
+            <select name="provincia" id="documento">
+                <option value="04">Passport/CIF</option>
+            </select> 
+        </div>
+
+        <!-- Email -->
+
+        <div class="textarea">
+            <label for="textarea2">Email <span>*</span></label>
+            <input onchange="resetear('email')" type="textarea" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" value="saramullenalarcon@gmail.com">
+        </div>
+
+        <div id="emailHelp" class="text-red"></div>
+
+        <!-- Familia numerosa -->
+
+        <div class="">
+            <label>¿Do you have a large family? <span style="margin-right: 10%;">*</span> </label>
+            <input onchange="resetear('familia')" id="yes" type="radio" name="familia" value="yes" checked>
+            <label for="yes">Yes</label>
+            <input onchange="resetear('familia')" id="no" type="radio" name="familia" value="0">
+            <label for="no">No</label>
+        </div>
+
+        <div id="familiaHelp" class="text-red aceptar">We only accept large families</div>
+
+        <!-- Términos -->
+        
+        <input onchange="resetear('terminos')" type="checkbox" name="terminos" id="terminos" aria-describedby="terminosHelp" value="1" checked> 
+        <label>I Accept the <a id="myBtn" class="link">terms and conditions</a></label> <br>
+
+        <div id="terminosHelp" class="text-red aceptar">You must accept the terms and conditions</div>
+
+        <!-- w3school -->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <h3> Website Registration Terms and Conditions</h3>
+
+                <h4 style="margin-top: 2%; margin-bottom: 2%;">By registering on this website, you agree to the following:</h4>
+
+                <p style="margin-bottom: 2%;"> Provide accurate and current personal information, including email, phone number, and details about a large family. </p>
+
+                <h5>Accurate Information:</h5>
+
+                <div class="text-justify" style="color: white;">
+
+                    <p>Provide accurate and current personal information, including email, phone number, and details about a large family.</p>
+                    
+                    <h5>Personal Use Only:</h5>
+                    
+                    <p> Register for personal use only; do not register on behalf of others without their consent.</p>
+
+                    <h5>Privacy Compliance: </h5>
+                    
+                    <p>Your information will be collected and processed in accordance with our privacy policy.</p>
+                    
+                    <h5>Communication Consent:</h5>
+                    
+                    <p>Agree to receive electronic communications related to your account and services. </p>
+
+                    <h5>Security Awareness:</h5></p>
+                    
+                    <p>Take precautions to secure your personal information; we implement security measures but cannot guarantee absolute security.</p>
+
+                    <h5>Family Information Usage:</h5>
+                    
+                    <p>Accept the use of large family information according to our policies and privacy laws. </p>
+
+                    <h5>Updates Notification:</h5>
+                    
+                    <p>Be notified of significant changes to these terms and have the opportunity to review and accept new terms. </p>
+
+                    <h5>Account Termination:</h5>
+                    
+                    <p>We may suspend or cancel your account for violations. </p>
+
+                    <p style="margin-top: 2%;">By registering, you acknowledge and accept these terms. If you disagree, please refrain from completing the registration process.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="button">
+            <button type="submit">Entrar</button>
+            <button class="cancel-btn">Cancelar</butto>
+        </div>
+    </form>
+</div>
+</body>
+
+    <script src="./js/modificacion.js"></script>
 </html>
