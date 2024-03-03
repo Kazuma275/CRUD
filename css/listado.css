@@ -4,11 +4,17 @@
 
 /* Estilo general */
 
-html{
-    overflow: scroll;
+@font-face {
+    font-family: texto;
+    src: url(../font/Gorva-Regular-Demo.ttf);
 }
 
-#container {
+h1, p {
+    font-family: "texto";
+    align-items: center;
+    font-weight: bold;
+}
+/* #container {
     width: 80%;
     display: flex;
     align-items: center;
@@ -17,7 +23,7 @@ html{
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
-}
+} */
 
 /* Estilo de tablas */
 
@@ -30,6 +36,30 @@ caption {
 table {
     border-collapse: collapse;
     width: 100%;
+}
+
+#cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 19%;
+    border: 4px outset rgb(94,3,196);
+    border-radius: 2%;
+    padding: 0.5%;
+    box-sizing: border-box; /* no cuenta el borde (2px) en los cálculos */
+    margin: 2.5%;
+    box-shadow: 10px 5px 5px rgb(98,63,228);
+}
+
+.card-margin-top {
+    margin-top: 3%;
+}
+
+.card:hover {
+    backdrop-filter: blur(10px);
 }
 
 th, td {
@@ -49,7 +79,7 @@ tr:first-child {
     color: white;
 }
 
-tr:hover td{backdrop-filter: blur(10px);}
+tr:hover td{backdrop-filter: blur(20px);}
 
 /* Estilo botones */
 
@@ -119,4 +149,28 @@ p {
     margin: 0 auto;
     padding-bottom: 32px;
     color: rgba(255,255,255,0.6);
+}
+
+@media only screen and (max-width: 1570px) {
+    
+    .card {
+        width: 30%;
+        margin: 1.5%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    
+    .card {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    
+    .card {
+        width: 98%;
+        margin: 1%;
+    }
 }
