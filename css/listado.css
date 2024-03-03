@@ -4,6 +4,10 @@
 
 /* Estilo general */
 
+html{
+    overflow: scroll;
+}
+
 #container {
     width: 80%;
     display: flex;

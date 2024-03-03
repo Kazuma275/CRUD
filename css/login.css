@@ -99,7 +99,11 @@ h2 {
 .text-red {
   color: red;
   visibility: hidden;
-  border-color: red;
+}
+
+.aceptar {
+  font-size: 0.7em;
+  text-align: justify;
 }
 
 #remember {

@@ -21,7 +21,7 @@ function validacion() {
 
     if (username === "" || !(username.length >= 8 && username.length <= 12)) {
         document.getElementById('usernameHelp').style.visibility = "visible";
-        document.getElementById('username').style.borderBottom = "2px solid red";
+        document.getElementById('username').style.borderBottom = "3px solid red";
         correcto = false;
     }
 
@@ -30,7 +30,7 @@ function validacion() {
     // Validar la contraseña con al menos una mayúscula, una minúscula y un dígito
     if (!(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,15}$/.test(password))) {
         document.getElementById('passwordHelp').style.visibility = "visible";
-        document.getElementById('password').style.borderBottom = "2px solid red";
+        document.getElementById('password').style.borderBottom = "3px solid red";
         correcto = false;
     }
 
